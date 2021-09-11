@@ -1,0 +1,4 @@
+*.pth
+/processed
+/raw
+model.log

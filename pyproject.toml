@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "pytorchPlacename"
+version = "0.1.0"
+description = ""
+authors = ["Jacob <jbuchanan21@qub.ac.uk>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+matplotlib = "^3.4.3"
+PyQt5 = "^5.15.4"
+tqdm = "^4.62.2"
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.10.0"
+
+[tool.poetry.dev-dependencies]
+poethepoet = "^0.10.0"
+
+[tool.poe.tasks]
+force-cuda11 = "python -m pip install torchvision==0.10.0+cu111 torch==1.9.0+cu111  -f https://download.pytorch.org/whl/torch_stable.html"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
