@@ -24,4 +24,6 @@ include names of similar length, thus maximising the amount of useful input.
 This design now trains much more effectively, and around 10% faster, however it still suffers from a tendency to bottom 
 out and output all zeros. This appears to happen semi-randomly, and may be correlated with the batch size and the length
 of an epoch. More research and debugging is required to determine the cause, especially pinning down if it is truly 
-random or deterministically related to a certain bad sample(s)
+random or deterministically related to a certain bad sample(s). The only trained model I managed to save and sample 
+without suffering 'flatlining' suffers from what appears to be severe overfitment, or something similar, and has no 
+apparent grasp of regions, as the outputs are extremely similar within a few letters for any given starting letter.

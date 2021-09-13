@@ -1,4 +1,4 @@
-import os
+# the wrong approach, cnn architectures are not suitable (at least in this form) for name generation problems
 import string
 import torch
 import torch.nn as nn
