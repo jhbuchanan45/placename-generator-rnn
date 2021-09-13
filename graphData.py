@@ -4,7 +4,7 @@ from matplotlib import style
 
 matplotlib.use('Qt5Agg')
 
-model_name = "model-placenames-gb-1631391477"
+model_name = "model-placenames-gb-1631548086"
 
 def create_acc_loss_graph(model_name):
     contents = open("model.log").read().split('\n')

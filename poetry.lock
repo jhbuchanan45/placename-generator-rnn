@@ -86,6 +86,14 @@ optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
+name = "pyprof"
+version = "0.0.6"
+description = "This package focus on build time profiler for python functions and snippets."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "pyqt5"
 version = "5.15.4"
 description = "Python bindings for the Qt cross platform application toolkit"
@@ -159,7 +167,7 @@ telegram = ["requests"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "9d24e4459a2bd8e0c93622064b3eb36cd51f51954e68853a154a6c4d5306a885"
+content-hash = "02b9028e61d5e0c0ed6776575b390180be5da2c2aee762635126771eb05f4aa3"
 
 [metadata.files]
 colorama = [
@@ -323,6 +331,10 @@ poethepoet = [
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
     {file = "pyparsing-2.4.7.tar.gz", hash = "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"},
+]
+pyprof = [
+    {file = "pyprof-0.0.6-py3-none-any.whl", hash = "sha256:9dd40710d8df2f19c657274625469086e2e4b9c7f9dca4ebd67fdca028fec3b2"},
+    {file = "pyprof-0.0.6.tar.gz", hash = "sha256:20bb17d2386130da1bd71575efe3e3b9399982c2c7aa5593ec7defc50c618186"},
 ]
 pyqt5 = [
     {file = "PyQt5-5.15.4-cp36.cp37.cp38.cp39-abi3-macosx_10_13_intel.whl", hash = "sha256:8c0848ba790a895801d5bfd171da31cad3e551dbcc4e59677a3b622de2ceca98"},
