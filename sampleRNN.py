@@ -5,7 +5,7 @@ import torch
 max_length = 20
 
 rnn = rnn_impl.RNN(rnn_impl.n_letters, 256, rnn_impl.n_letters, rnn_impl.n_regions)
-rnn.load_state_dict(torch.load("usable_ish.pth"))
+rnn.load_state_dict(torch.load("model-placenames-gb-1631560872.pth"))
 
 
 # Sample from a category and starting letter

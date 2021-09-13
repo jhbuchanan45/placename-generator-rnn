@@ -99,7 +99,7 @@ def batch_to_tensor(batch):
     return torch.stack(t_regions, dim=0), torch.stack(t_inputs, dim=0), torch.stack(t_targets, dim=0)
 
 
-learning_rate = 0.005
+learning_rate = 0.001
 
 rnn = RNN(n_letters, 256, n_letters, n_regions).to(device)
 optimiser = optim.Adam(rnn.parameters(), lr=learning_rate)
@@ -127,6 +127,7 @@ def fwd_pass(region_tensor, input_tensor, target_tensor, train=False):
 
     if train:
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(rnn.parameters(), 0.5)
         optimiser.step()
         optimiser.zero_grad()
 
@@ -163,8 +164,8 @@ def get_batches(dataset, batch_size):
 
 
 def train():
-    BATCH_SIZE = round_eight(192)
-    EPOCHS = 1
+    BATCH_SIZE = round_eight(127)
+    EPOCHS = 5
 
     with open("model.log", "a") as f:
 
@@ -172,7 +173,7 @@ def train():
             dataset = get_list_for_batching(training_data_list)
             batches = get_batches(dataset, BATCH_SIZE)
 
-            for i in tqdm(range(0, len(dataset) - BATCH_SIZE - 300000, BATCH_SIZE)):
+            for i in tqdm(range(0, len(dataset) - BATCH_SIZE, BATCH_SIZE)):
                 batch = next(batches)
 
                 train_loss = batch_pass(batch, train=True)

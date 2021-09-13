@@ -82,6 +82,13 @@ class RNN(nn.Module):
         output = self.softmax(output)
         # print("out: ", one_hot_to_letter(output[0]))
         # print("output softmax: ", output)
+        nonzero = torch.count_nonzero(output[0])
+        if torch.isnan(output[0][0]):
+            print("WARNING: output was nan")
+        if nonzero == 0:
+            print("WARNING: output was all zeros")
+        if 10 > nonzero > 0:
+            print(f"warning: low zero count {nonzero}")
         return output, hidden
 
     def init_hidden(self, batch_size=1, device="cpu"):
